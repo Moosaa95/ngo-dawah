@@ -163,11 +163,35 @@ export default function Hero() {
           box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
         }
         .glass-card-dark:hover {
-          transform: translateY(-5px);
+          transform: scale(1.05) translateY(-5px) !important;
           background: rgba(255, 255, 255, 0.06);
           border-color: rgba(63, 181, 63, 0.3);
           box-shadow: 0 12px 40px rgba(63, 181, 63, 0.2);
         }
+        .hero-stats-grid .stat-card:nth-child(1) {
+          animation: float-slow 6s ease-in-out infinite;
+        }
+        .hero-stats-grid .stat-card:nth-child(2) {
+          animation: float-medium 5s ease-in-out infinite 0.5s;
+        }
+        .hero-stats-grid .stat-card:nth-child(3) {
+          animation: float-medium 7s ease-in-out infinite 1s;
+        }
+        .hero-stats-grid .stat-card:nth-child(4) {
+          animation: float-slow 8s ease-in-out infinite 1.5s;
+        }
+        
+        @keyframes float-slow {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-10px); }
+          100% { transform: translateY(0px); }
+        }
+        @keyframes float-medium {
+          0% { transform: translateY(0px); }
+          50% { transform: translateY(-7px); }
+          100% { transform: translateY(0px); }
+        }
+
         .stat-num {
           font-family: 'Outfit', sans-serif;
           font-size: 40px;
@@ -180,6 +204,7 @@ export default function Hero() {
           font-weight: 500;
           color: rgba(255, 255, 255, 0.6);
         }
+
 
         @media (max-width: 991px) {
           .hero-container {

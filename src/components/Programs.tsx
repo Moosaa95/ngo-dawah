@@ -344,16 +344,35 @@ export default function Programs() {
           transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .sdg-tile.inactive {
-          background: rgba(15, 30, 54, 0.04);
-          color: rgba(15, 30, 54, 0.2);
-          border: 1px dashed rgba(15, 30, 54, 0.1);
+          background: rgba(15, 30, 54, 0.03);
+          color: rgba(15, 30, 54, 0.15);
+          border: 1px dashed rgba(15, 30, 54, 0.08);
+          filter: grayscale(90%) opacity(40%) blur(0.5px);
+        }
+        .sdg-tile.inactive:hover {
+          filter: none opacity(100%);
+          border-color: var(--secondary-green);
+          background: #FFFFFF;
         }
         .sdg-tile.active {
           background-color: var(--sdg-color);
           color: #FFFFFF;
-          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-          transform: scale(1.08);
-          border: 1px solid rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.2);
+          animation: activePulse 2.5s infinite ease-in-out;
+        }
+        @keyframes activePulse {
+          0% {
+            transform: scale(1.1);
+            box-shadow: 0 4px 14px var(--sdg-color);
+          }
+          50% {
+            transform: scale(1.15);
+            box-shadow: 0 8px 24px var(--sdg-color);
+          }
+          100% {
+            transform: scale(1.1);
+            box-shadow: 0 4px 14px var(--sdg-color);
+          }
         }
         .sdg-num {
           font-family: 'Outfit', sans-serif;

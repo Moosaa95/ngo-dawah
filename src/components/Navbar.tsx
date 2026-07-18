@@ -13,6 +13,13 @@ export default function Navbar() {
       } else {
         setIsScrolled(false);
       }
+
+      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollPercentage = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
+      const progressEl = document.querySelector('.scroll-progress') as HTMLElement;
+      if (progressEl) {
+        progressEl.style.width = `${scrollPercentage}%`;
+      }
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -22,10 +29,13 @@ export default function Navbar() {
 
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+      {/* Scroll Progress Bar */}
+      <div className="scroll-progress"></div>
+      
       <div className="nav-container">
         <a href="#" className="nav-logo">
           {/* Recreating CIF Logo with Inline SVG */}
-          <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo-svg">
             <circle cx="100" cy="100" r="80" fill="white" stroke="#3FB53F" strokeWidth="6" />
             <path d="M100 135C125 135 145 115 145 90C145 65 125 45 100 45C75 45 55 65 55 90C55 115 75 135 100 135Z" fill="#FAFBFD" />
             {/* Figures in logo */}
@@ -82,16 +92,25 @@ export default function Navbar() {
           left: 0;
           width: 100%;
           z-index: 1000;
-          padding: 20px 0;
+          padding: 24px 0;
           transition: var(--transition-normal);
           background: transparent;
+        }
+        .scroll-progress {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--secondary-green), var(--accent-gold));
+          width: 0%;
+          transition: width 0.1s ease;
         }
         .navbar.scrolled {
           padding: 12px 0;
           background: rgba(255, 255, 255, 0.85);
-          backdrop-filter: blur(12px);
-          -webkit-backdrop-filter: blur(12px);
-          border-bottom: 1px solid rgba(63, 181, 63, 0.1);
+          backdrop-filter: blur(16px);
+          -webkit-backdrop-filter: blur(16px);
+          border-bottom: 1px solid rgba(63, 181, 63, 0.15);
           box-shadow: var(--shadow-sm);
         }
         .nav-container {
@@ -107,35 +126,54 @@ export default function Navbar() {
           align-items: center;
           gap: 12px;
         }
+        .logo-svg {
+          transition: var(--transition-normal);
+        }
+        .navbar.scrolled .logo-svg {
+          transform: scale(0.9);
+        }
         .logo-text {
           display: flex;
           flex-direction: column;
         }
+        .navbar:not(.scrolled) .cif-abbr {
+          color: #FFFFFF;
+        }
+        .navbar.scrolled .cif-abbr {
+          color: var(--primary-navy);
+        }
         .cif-abbr {
           font-family: 'Outfit', sans-serif;
           font-weight: 800;
-          font-size: 20px;
-          color: var(--primary-navy);
+          font-size: 22px;
           letter-spacing: 2px;
           line-height: 1;
+          transition: var(--transition-normal);
         }
         .cif-full {
           font-size: 10px;
-          font-weight: 700;
+          font-weight: 800;
           color: var(--secondary-green);
           letter-spacing: 1px;
+          margin-top: 2px;
         }
         .nav-links {
           display: flex;
           align-items: center;
           gap: 32px;
         }
+        .navbar:not(.scrolled) .nav-link {
+          color: rgba(255, 255, 255, 0.85);
+        }
+        .navbar.scrolled .nav-link {
+          color: var(--text-primary);
+        }
         .nav-link {
           font-size: 15px;
-          font-weight: 500;
-          color: var(--text-primary);
+          font-weight: 600;
           position: relative;
           padding: 6px 0;
+          transition: var(--transition-fast);
         }
         .nav-link::after {
           content: '';
@@ -148,6 +186,9 @@ export default function Navbar() {
           transition: var(--transition-fast);
         }
         .nav-link:hover {
+          color: #FFFFFF;
+        }
+        .navbar.scrolled .nav-link:hover {
           color: var(--secondary-green);
         }
         .nav-link:hover::after {
@@ -158,15 +199,15 @@ export default function Navbar() {
           color: #FFFFFF;
           padding: 10px 22px;
           border-radius: 50px;
-          font-weight: 600;
+          font-weight: 700;
           font-size: 14px;
           box-shadow: 0 4px 10px rgba(63, 181, 63, 0.3);
           transition: var(--transition-normal);
         }
         .btn-primary-sm:hover {
           background-color: #35A335;
-          transform: translateY(-1px);
-          box-shadow: 0 6px 14px rgba(63, 181, 63, 0.5);
+          transform: translateY(-2px);
+          box-shadow: 0 6px 16px rgba(63, 181, 63, 0.5);
         }
         .hamburger {
           display: none;
@@ -176,16 +217,22 @@ export default function Navbar() {
           background: none;
           border: none;
         }
+        .navbar:not(.scrolled) .bar {
+          background-color: #FFFFFF;
+        }
+        .navbar.scrolled .bar {
+          background-color: var(--primary-navy);
+        }
         .bar {
           height: 3px;
           width: 100%;
-          background-color: var(--primary-navy);
           border-radius: 2px;
           transition: var(--transition-normal);
         }
         .mobile-nav {
           display: none;
         }
+
 
         @media (max-width: 991px) {
           .nav-links {

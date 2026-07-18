@@ -210,6 +210,7 @@ export default function About() {
           border-radius: 30px;
           box-shadow: 0 4px 10px rgba(63, 181, 63, 0.3);
           border: 2px solid #FAFBFD;
+          transition: var(--transition-normal);
         }
         .timeline-card {
           background: #FFFFFF;
@@ -222,7 +223,13 @@ export default function About() {
         .timeline-card:hover {
           transform: translateX(5px);
           box-shadow: var(--shadow-md);
-          border-color: rgba(63, 181, 63, 0.15);
+          border-color: rgba(63, 181, 63, 0.25);
+        }
+        .timeline-item:hover .timeline-badge {
+          transform: scale(1.15);
+          background-color: var(--accent-gold);
+          color: var(--primary-navy);
+          box-shadow: 0 6px 16px rgba(226, 177, 60, 0.4);
         }
         .timeline-card h4 {
           font-size: 18px;
