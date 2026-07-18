@@ -194,7 +194,7 @@ export default function Team() {
                     alt={member.name}
                     width={180}
                     height={180}
-                    className="avatar-img"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }}
                   />
                 ) : (
                   <div className="avatar-placeholder">
@@ -229,7 +229,7 @@ export default function Team() {
                     alt={selectedMember.name}
                     width={220}
                     height={220}
-                    className="modal-avatar-img"
+                    style={{ borderRadius: '20px', objectFit: 'cover', width: 'auto', height: 'auto' }}
                   />
                 ) : (
                   <div className="modal-avatar-placeholder">
