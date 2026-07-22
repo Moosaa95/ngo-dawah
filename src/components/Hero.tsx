@@ -11,8 +11,8 @@ export default function Hero() {
         <div className="hero-content animate-fade-in">
           <span className="hero-tagline">Empowering Communities in Nigeria</span>
           <h1 className="hero-title">
-            Bridging Gaps in <br />
-            <span className="accent-text">Human & Capital</span> Development
+            Empowering <span className="accent-text">Community</span> in Nigeria <br />
+            and <span className="accent-text">Global Space</span>
           </h1>
           <p className="hero-desc">
             Founded in 2019, Crescent Impact Foundation (CIF) is a proactive force 
@@ -53,8 +53,50 @@ export default function Hero() {
           </div>
         </div>
       </div>
+      
+      {/* Scroll indicator mouse */}
+      <div className="scroll-indicator">
+        <div className="mouse">
+          <div className="wheel"></div>
+        </div>
+      </div>
 
       <style jsx>{`
+        .scroll-indicator {
+          position: absolute;
+          bottom: 30px;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 10;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+        .mouse {
+          width: 26px;
+          height: 42px;
+          border: 2px solid rgba(255, 255, 255, 0.4);
+          border-radius: 20px;
+          position: relative;
+        }
+        .wheel {
+          width: 4px;
+          height: 8px;
+          background-color: var(--secondary-green);
+          border-radius: 2px;
+          position: absolute;
+          top: 8px;
+          left: 50%;
+          transform: translateX(-50%);
+          animation: scroll-wheel 1.6s ease-out infinite;
+        }
+        @keyframes scroll-wheel {
+          0% { opacity: 0; top: 8px; }
+          20% { opacity: 1; }
+          80% { opacity: 0; top: 22px; }
+          100% { opacity: 0; }
+        }
+
         .hero-section {
           background-color: var(--primary-navy);
           position: relative;

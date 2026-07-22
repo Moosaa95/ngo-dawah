@@ -1,8 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Navbar() {
+  const pathname = usePathname();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -27,13 +30,16 @@ export default function Navbar() {
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
+  const isHome = pathname === '/';
+  const showScrolledNavbar = !isHome || isScrolled;
+
   return (
-    <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${showScrolledNavbar ? 'scrolled' : ''}`}>
       {/* Scroll Progress Bar */}
       <div className="scroll-progress"></div>
       
       <div className="nav-container">
-        <a href="#" className="nav-logo">
+        <Link href="/" className="nav-logo">
           {/* Recreating CIF Logo with Inline SVG */}
           <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo-svg">
             <circle cx="100" cy="100" r="80" fill="white" stroke="#3FB53F" strokeWidth="6" />
@@ -53,17 +59,16 @@ export default function Navbar() {
             <span className="cif-abbr">C I F</span>
             <span className="cif-full">CRESCENT IMPACT</span>
           </div>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="nav-links">
-          <a href="#about" className="nav-link">About Us</a>
-          <a href="#focus" className="nav-link">Our Focus</a>
-          <a href="#programs" className="nav-link">Key Programs</a>
-          <a href="#organogram" className="nav-link">Structure</a>
-          <a href="#team" className="nav-link">Leadership</a>
-          <a href="#offices" className="nav-link">Zonal Offices</a>
-          <a href="#contact" className="btn-primary-sm">Get Involved</a>
+          <Link href="/" className={`nav-link ${pathname === '/' ? 'active-route' : ''}`}>Home</Link>
+          <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active-route' : ''}`}>About Us</Link>
+          <Link href="/focus" className={`nav-link ${pathname === '/focus' ? 'active-route' : ''}`}>Our Focus</Link>
+          <Link href="/programs" className={`nav-link ${pathname === '/programs' ? 'active-route' : ''}`}>Key Programs</Link>
+          <Link href="/team" className={`nav-link ${pathname === '/team' ? 'active-route' : ''}`}>Leadership</Link>
+          <Link href="/contact" className="btn-primary-sm">Get Involved</Link>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -76,13 +81,12 @@ export default function Navbar() {
 
       {/* Mobile Drawer Dropdown */}
       <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
-        <a href="#about" onClick={toggleMenu} className="mobile-link">About Us</a>
-        <a href="#focus" onClick={toggleMenu} className="mobile-link">Our Focus</a>
-        <a href="#programs" onClick={toggleMenu} className="mobile-link">Key Programs</a>
-        <a href="#organogram" onClick={toggleMenu} className="mobile-link">Structure</a>
-        <a href="#team" onClick={toggleMenu} className="mobile-link">Leadership</a>
-        <a href="#offices" onClick={toggleMenu} className="mobile-link">Zonal Offices</a>
-        <a href="#contact" onClick={toggleMenu} className="btn-primary mobile-btn">Get Involved</a>
+        <Link href="/" onClick={toggleMenu} className="mobile-link">Home</Link>
+        <Link href="/about" onClick={toggleMenu} className="mobile-link">About Us</Link>
+        <Link href="/focus" onClick={toggleMenu} className="mobile-link">Our Focus</Link>
+        <Link href="/programs" onClick={toggleMenu} className="mobile-link">Key Programs</Link>
+        <Link href="/team" onClick={toggleMenu} className="mobile-link">Leadership</Link>
+        <Link href="/contact" onClick={toggleMenu} className="btn-primary mobile-btn">Get Involved</Link>
       </div>
 
       <style jsx>{`
@@ -94,7 +98,7 @@ export default function Navbar() {
           z-index: 1000;
           padding: 24px 0;
           transition: var(--transition-normal);
-          background: transparent;
+          background: linear-gradient(180deg, rgba(15, 30, 54, 0.6) 0%, rgba(15, 30, 54, 0) 100%);
         }
         .scroll-progress {
           position: absolute;
@@ -191,6 +195,15 @@ export default function Navbar() {
         .navbar.scrolled .nav-link:hover {
           color: var(--secondary-green);
         }
+        .navbar:not(.scrolled) .nav-link.active-route {
+          color: #FFFFFF;
+        }
+        .navbar.scrolled .nav-link.active-route {
+          color: var(--secondary-green);
+        }
+        .nav-link.active-route::after {
+          width: 100%;
+        }
         .nav-link:hover::after {
           width: 100%;
         }
@@ -232,7 +245,6 @@ export default function Navbar() {
         .mobile-nav {
           display: none;
         }
-
 
         @media (max-width: 991px) {
           .nav-links {

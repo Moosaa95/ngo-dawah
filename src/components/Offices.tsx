@@ -20,6 +20,12 @@ export default function Offices() {
       icon: '🏢',
     },
     {
+      region: 'HQ',
+      name: 'Branch Office',
+      address: 'Plot 2, Suite D3, NYMEX plaza, Gado Nasko Road, Kubwa, Abuja, Nigeria.',
+      icon: '🏢',
+    },
+    {
       region: 'south-west',
       name: 'South-West Zonal Office',
       address: 'Plot 1 Olayiwola Crescent, Opp. Govt. House, Oke-Fia, Osogbo, Osun State, Nigeria.',

@@ -1,5 +1,7 @@
 'use client';
 
+import Link from 'next/link';
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -34,12 +36,12 @@ export default function Footer() {
         <div className="footer-col">
           <h3>Quick Links</h3>
           <ul className="footer-links">
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#focus">Our Focus</a></li>
-            <li><a href="#programs">Key Programs</a></li>
-            <li><a href="#organogram">Structure</a></li>
-            <li><a href="#team">Leadership</a></li>
-            <li><a href="#offices">Zonal Offices</a></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/focus">Our Focus</Link></li>
+            <li><Link href="/programs">Key Programs</Link></li>
+            <li><Link href="/focus#organogram">Structure</Link></li>
+            <li><Link href="/team">Leadership</Link></li>
+            <li><Link href="/contact">Zonal Offices</Link></li>
           </ul>
         </div>
 
