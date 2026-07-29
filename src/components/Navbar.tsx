@@ -11,11 +11,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 20);
 
       const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
       const scrollPercentage = totalScroll > 0 ? (window.scrollY / totalScroll) * 100 : 0;
@@ -24,17 +20,21 @@ export default function Navbar() {
         progressEl.style.width = `${scrollPercentage}%`;
       }
     };
-    window.addEventListener('scroll', handleScroll);
+    // Run immediately to sync state with actual scroll position on mount
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const isHome = pathname === '/';
-  const showScrolledNavbar = !isHome || isScrolled;
+  // Homepage: transparent nav that becomes solid on scroll.
+  // All other pages: always solid frosted-glass navbar.
+  const forceScrolled = !isHome || isScrolled;
 
   return (
-    <nav className={`navbar ${showScrolledNavbar ? 'scrolled' : ''}`}>
+    <nav className={`navbar ${forceScrolled ? 'scrolled' : ''}`}>
       {/* Scroll Progress Bar */}
       <div className="scroll-progress"></div>
       
@@ -57,7 +57,7 @@ export default function Navbar() {
           </svg>
           <div className="logo-text">
             <span className="cif-abbr">C I F</span>
-            <span className="cif-full">CRESCENT IMPACT</span>
+            <span className="cif-full">CRESCENT IMPACT FOUNDATION</span>
           </div>
         </Link>
 
@@ -170,7 +170,7 @@ export default function Navbar() {
           color: rgba(255, 255, 255, 0.85);
         }
         .navbar.scrolled .nav-link {
-          color: var(--text-primary);
+          color: #1F2E47;
         }
         .nav-link {
           font-size: 15px;

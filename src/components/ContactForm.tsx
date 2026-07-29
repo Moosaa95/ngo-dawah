@@ -78,9 +78,8 @@ export default function ContactForm() {
               <div className="method-details">
                 <h4>Helpline Numbers</h4>
                 <div className="phone-list">
-                  <span>08056061168, 08033864126</span>
-                  <span>07034243999, 08167223472</span>
-                  <span>07030124655, 07033339699</span>
+                  <span>08033864126, 08056061168, 08167223472</span>
+                  <span>07034243999, 07030124655, 07033339699</span>
                 </div>
               </div>
             </div>

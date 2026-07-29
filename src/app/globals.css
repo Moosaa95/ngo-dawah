@@ -33,6 +33,151 @@
   --shadow-green: 0 8px 30px rgba(63, 181, 63, 0.15);
 }
 
+/* ── Global Navbar Scrolled State ───────────────────────────────────────── */
+/* Lives here to bypass styled-jsx scoping issues with Turbopack             */
+nav.navbar.scrolled {
+  padding: 12px 0 !important;
+  background: rgba(255, 255, 255, 0.97) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  border-bottom: 1px solid rgba(63, 181, 63, 0.15) !important;
+  box-shadow: 0 2px 12px rgba(15, 30, 54, 0.08) !important;
+}
+nav.navbar.scrolled .nav-link {
+  color: #1F2E47 !important;
+}
+nav.navbar.scrolled .nav-link:hover {
+  color: #3FB53F !important;
+}
+nav.navbar.scrolled .nav-link.active-route {
+  color: #3FB53F !important;
+}
+nav.navbar.scrolled .cif-abbr {
+  color: #0F1E36 !important;
+}
+nav.navbar.scrolled .bar {
+  background-color: #0F1E36 !important;
+}
+
+/* ── Global Lightbox ────────────────────────────────────────────────────── */
+/* Must be global — lightbox renders as a child component outside parent's   */
+/* styled-jsx scope, so class-based CSS from the parent never reaches it.    */
+.lb-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 18, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: lbIn 0.22s ease;
+}
+@keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+
+.lb-shell {
+  position: relative;
+  width: 94vw;
+  max-width: 1280px;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.lb-img-box {
+  position: relative;
+  width: 100%;
+  flex: 1;
+  min-height: 0;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #080d17;
+}
+.lb-x {
+  position: absolute;
+  top: -52px;
+  right: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 10;
+}
+.lb-x:hover { background: rgba(255,255,255,0.25); }
+.lb-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.15s;
+  z-index: 10;
+}
+.lb-arrow:hover { background: rgba(255,255,255,0.28); }
+.lb-arrow-l { left: -70px; }
+.lb-arrow-r { right: -70px; }
+.lb-info-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 2px 0;
+  gap: 20px;
+  flex-shrink: 0;
+}
+.lb-cap {
+  font-size: 13.5px;
+  color: rgba(255,255,255,0.72);
+  font-style: italic;
+  line-height: 1.45;
+  margin: 0;
+  flex: 1;
+}
+.lb-ctr {
+  font-size: 13px;
+  color: rgba(255,255,255,0.4);
+  font-family: 'Outfit', monospace;
+  white-space: nowrap;
+}
+.lb-dotrow {
+  display: flex;
+  gap: 7px;
+  padding-top: 12px;
+  justify-content: center;
+}
+.lb-d {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.3);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.15s, transform 0.15s;
+}
+.lb-d.on { background: #3FB53F; transform: scale(1.35); }
+.lb-d:hover { background: rgba(255,255,255,0.65); }
+@media (max-width: 820px) {
+  .lb-arrow-l { left: 6px; top: auto; bottom: 110px; transform: none; }
+  .lb-arrow-r { right: 6px; top: auto; bottom: 110px; transform: none; }
+}
+
 /* Base Styles */
 * {
   box-sizing: border-box;
@@ -226,3 +371,215 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #999;
 }
+
+/* ── Global Program Carousel & Gallery Strip Styles ─────────────────────── */
+/* These are global to prevent styled-jsx scoping issues in Next.js           */
+.prog-carousel {
+  position: relative;
+  background: #0F1E36;
+  padding: 24px 24px 16px;
+  border-radius: 20px 20px 0 0;
+}
+.prog-carousel-image-wrap {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: zoom-in;
+  display: block;
+}
+.prog-carousel-image-wrap img {
+  display: block;
+  width: 100%;
+  height: 400px !important;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.prog-carousel-image-wrap:hover img {
+  transform: scale(1.015);
+}
+.prog-img-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  background: rgba(15, 30, 54, 0.75);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 30px;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 5;
+}
+.prog-img-badge.badge-hero { background: rgba(63, 181, 63, 0.85); }
+.prog-img-badge.badge-feature { background: rgba(226, 177, 60, 0.85); }
+.prog-img-badge.badge-team { background: rgba(15, 30, 54, 0.85); }
+.prog-img-badge.badge-gallery { background: rgba(74, 91, 115, 0.85); }
+.prog-img-badge.badge-partnerships { background: rgba(38, 189, 226, 0.85); }
+.prog-img-badge.badge-educational_graphic { background: rgba(253, 105, 37, 0.85); }
+
+/* Expand hint overlay */
+.carousel-expand-hint {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(15, 30, 54, 0.8);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: 30px;
+  opacity: 0;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+  pointer-events: none;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transform: translateY(4px);
+  z-index: 5;
+}
+.prog-carousel-image-wrap:hover .carousel-expand-hint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.prog-carousel-caption {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  text-align: center;
+  margin: 12px 0 8px;
+  font-style: italic;
+  line-height: 1.5;
+  min-height: 20px;
+  padding: 0 16px;
+}
+.prog-carousel-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  padding-bottom: 6px;
+}
+.carousel-nav-btn {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s, transform 0.15s;
+  flex-shrink: 0;
+  padding: 0;
+}
+.carousel-nav-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: scale(1.05);
+}
+.carousel-nav-btn:active {
+  transform: scale(0.95);
+}
+.carousel-dots {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.carousel-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  padding: 0;
+}
+.carousel-dot.active {
+  background: #3FB53F;
+  transform: scale(1.3);
+}
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+.prog-no-image {
+  background: #0F1E36;
+  padding: 70px 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: rgba(255, 255, 255, 0.5);
+  border-radius: 20px 20px 0 0;
+  text-align: center;
+}
+.prog-no-image-icon {
+  font-size: 52px;
+  opacity: 0.4;
+}
+.prog-no-image p {
+  font-size: 15px;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Gallery strip */
+.gallery-strip {
+  margin-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  padding-top: 24px;
+}
+.gallery-strip-label {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #4A5B73;
+  margin: 0 0 14px;
+}
+.gallery-strip-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 10px;
+}
+.gallery-strip-item {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: border-color 0.25s, transform 0.25s;
+  border: 2px solid transparent;
+  background: none;
+  padding: 0;
+  display: block;
+  width: 100%;
+}
+.gallery-strip-item:hover {
+  border-color: #3FB53F;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 30, 54, 0.1);
+}
+.gallery-zoom-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 30, 54, 0.5);
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.gallery-strip-item:hover .gallery-zoom-icon {
+  opacity: 1;
+}
+

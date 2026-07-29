@@ -23,7 +23,7 @@ export default function Footer() {
             </svg>
             <div className="footer-logo-text">
               <h3>CIF</h3>
-              <span>CRESCENT IMPACT</span>
+              <span>CRESCENT IMPACT FOUNDATION</span>
             </div>
           </div>
           <p className="footer-desc">
@@ -56,7 +56,7 @@ export default function Footer() {
               <strong>Email:</strong> <a href="mailto:crescentimpactfoundation@gmail.com">crescentimpactfoundation@gmail.com</a>
             </li>
             <li>
-              <strong>Helpline:</strong> <a href="tel:+2348056061168">0805 606 1168</a>
+              <strong>Helpline:</strong> <a href="tel:+2348033864126">0803 386 4126</a>
             </li>
           </ul>
         </div>

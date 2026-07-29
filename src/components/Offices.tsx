@@ -21,7 +21,7 @@ export default function Offices() {
     },
     {
       region: 'HQ',
-      name: 'Branch Office',
+      name: 'Liaison Office',
       address: 'Plot 2, Suite D3, NYMEX plaza, Gado Nasko Road, Kubwa, Abuja, Nigeria.',
       icon: '🏢',
     },
