@@ -167,7 +167,8 @@ export default function Navbar() {
           gap: 32px;
         }
         .navbar:not(.scrolled) .nav-link {
-          color: rgba(255, 255, 255, 0.85);
+          color: #FFFFFF;
+          text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
         }
         .navbar.scrolled .nav-link {
           color: #1F2E47;
