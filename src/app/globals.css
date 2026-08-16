@@ -60,7 +60,7 @@ nav.navbar.scrolled .bar {
 }
 
 /* ── Global Lightbox ────────────────────────────────────────────────────── */
-/* Must be global — lightbox renders as a child component outside parent's   */
+/* Must be global - lightbox renders as a child component outside parent's   */
 /* styled-jsx scope, so class-based CSS from the parent never reaches it.    */
 .lb-overlay {
   position: fixed;

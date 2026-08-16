@@ -30,7 +30,7 @@ const programmes: Program[] = [
     title: 'Health',
     slug: 'health',
     summary:
-      "CIF's health programme focuses on closing the gap between communities and basic healthcare services. This includes organizing free or subsidized medical outreaches, health screenings, immunization support, maternal and child health awareness, and preventive care education — often in underserved and rural areas where clinics are scarce or costly. The goal is not just treatment but prevention: teaching hygiene practices, nutrition, and early disease detection so families avoid preventable illness altogether.",
+      "CIF's health programme focuses on closing the gap between communities and basic healthcare services. This includes organizing free or subsidized medical outreaches, health screenings, immunization support, maternal and child health awareness, and preventive care education - often in underserved and rural areas where clinics are scarce or costly. The goal is not just treatment but prevention: teaching hygiene practices, nutrition, and early disease detection so families avoid preventable illness altogether.",
     context_note:
       "These images document CIF's 2024 World AIDS Day community health outreach (HIV Testing Services), run in collaboration with the National Agency for the Control of AIDS (NACA), Heartland Alliance, the Institute of Human Virology Nigeria, and KNCV Nigeria, across outreach sites in Northern and Eastern Nigeria.",
     sdgs: [3, 6],
@@ -41,7 +41,7 @@ const programmes: Program[] = [
       { file: 'health-03-bp-check-closeup.jpeg', use: 'gallery', description: 'Close-up of blood pressure screening' },
       { file: 'health-04-counseling-table.jpeg', use: 'gallery', description: 'Health worker counseling a community member at a table' },
       { file: 'health-05-team-group-banner.jpeg', use: 'team', description: 'CIF team group photo in front of outreach banner' },
-      { file: 'health-06-hiv-finger-prick-test.jpeg', use: 'feature', description: 'HIV testing — finger-prick sample collection' },
+      { file: 'health-06-hiv-finger-prick-test.jpeg', use: 'feature', description: 'HIV testing - finger-prick sample collection' },
       { file: 'health-07-condom-distribution-registration.jpeg', use: 'gallery', description: 'Condom distribution and registration at community outreach' },
       { file: 'health-08-bp-check-family-watching.jpeg', use: 'gallery', description: 'Blood pressure check with family members observing' },
       { file: 'health-09-testing-registration-table.jpeg', use: 'gallery', description: 'Registration and paperwork at HIV testing table' },
@@ -57,7 +57,7 @@ const programmes: Program[] = [
     title: 'Education',
     slug: 'education',
     summary:
-      'Education initiatives under CIF aim at improving both the quality and access to schooling. This can mean scholarship support, provision of learning materials, teacher training partnerships, renovation of classroom infrastructure, and literacy drives for out-of-school children. The long-term aim is breaking the cycle of poverty by ensuring children — especially in low-income households — have a genuine pathway to sustained learning. As part of CIF\'s "Catch Them Young" initiative, education scholarships are awarded to both secondary and tertiary students.',
+      'Education initiatives under CIF aim at improving both the quality and access to schooling. This can mean scholarship support, provision of learning materials, teacher training partnerships, renovation of classroom infrastructure, and literacy drives for out-of-school children. The long-term aim is breaking the cycle of poverty by ensuring children - especially in low-income households - have a genuine pathway to sustained learning. As part of CIF\'s "Catch Them Young" initiative, education scholarships are awarded to both secondary and tertiary students.',
     context_note:
       "Images depict scholarship cheque presentations to secondary/tertiary students under the 'Catch Them Young' initiative.",
     sdgs: [4],
@@ -80,7 +80,7 @@ const programmes: Program[] = [
     sdgs: [5, 8, 10],
     icon: '👩‍💻',
     images: [
-      { file: 'youth-women-01-women-mobilization-cheer.jpeg', use: 'hero', description: 'Large group of women raising fists, cheering — mobilization/advocacy event' },
+      { file: 'youth-women-01-women-mobilization-cheer.jpeg', use: 'hero', description: 'Large group of women raising fists, cheering - mobilization/advocacy event' },
       { file: 'youth-women-02-skills-training-workshop.jpeg', use: 'gallery', description: 'Skill-training workshop for orphans/youth (baking/catering skills), group photo with trainees' },
       { file: 'youth-women-03-youth-conference-audience.jpeg', use: 'gallery', description: 'Large seated audience at a youth empowerment conference' },
     ],
@@ -90,13 +90,13 @@ const programmes: Program[] = [
     title: 'Job Creation',
     slug: 'job-creation',
     summary:
-      "CIF is focused on job creation rather than only offering handouts — this programme is built around enabling people to build their own livelihoods. It provides business training, mentorship from established entrepreneurs, and — where possible — start-up grants, micro-loans, or equipment support. The focus is on aspiring entrepreneurs who have an idea or trade skill but lack the capital or guidance to formalize and grow it into a sustainable business.",
+      "CIF is focused on job creation rather than only offering handouts - this programme is built around enabling people to build their own livelihoods. It provides business training, mentorship from established entrepreneurs, and - where possible - start-up grants, micro-loans, or equipment support. The focus is on aspiring entrepreneurs who have an idea or trade skill but lack the capital or guidance to formalize and grow it into a sustainable business.",
     context_note:
-      'This section currently has thin image coverage — more programme-specific photos (business training, grant/equipment handover, entrepreneur profiles) are being sourced.',
+      'This section currently has thin image coverage - more programme-specific photos (business training, grant/equipment handover, entrepreneur profiles) are being sourced.',
     sdgs: [1, 8, 9],
     icon: '💼',
     images: [
-      { file: 'job-creation-01-supplies-distribution-logistics.jpeg', use: 'hero', description: 'Team loading produce and supplies from a supply truck — logistics/distribution support for livelihoods' },
+      { file: 'job-creation-01-supplies-distribution-logistics.jpeg', use: 'hero', description: 'Team loading produce and supplies from a supply truck - logistics/distribution support for livelihoods' },
     ],
   },
   {
@@ -104,7 +104,7 @@ const programmes: Program[] = [
     title: 'Sadaqat, Zakat & Social Welfare',
     slug: 'sadaqat-zakat-welfare',
     summary:
-      "This is CIF's charitable-giving arm, rooted in Islamic principles of voluntary and obligatory giving. The foundation collects Sadaqah (voluntary charity) and coordinates its distribution toward humanitarian projects — food relief, emergency assistance for families in crisis, support for orphans and widows, and disaster response. It relies heavily on donor trust, so transparent tracking of how funds are used is central to this initiative.",
+      "This is CIF's charitable-giving arm, rooted in Islamic principles of voluntary and obligatory giving. The foundation collects Sadaqah (voluntary charity) and coordinates its distribution toward humanitarian projects - food relief, emergency assistance for families in crisis, support for orphans and widows, and disaster response. It relies heavily on donor trust, so transparent tracking of how funds are used is central to this initiative.",
     context_note: null,
     sdgs: [1, 2, 10],
     icon: '🤲',
@@ -118,7 +118,7 @@ const programmes: Program[] = [
     title: 'Capital & Human Development',
     slug: 'capital-human-development',
     summary:
-      "This is a broader, foundational programme underpinning several others — it's about equipping people with the durable resources needed for growth: financial literacy, vocational skills, access to credit or start-up capital, and personal development training (confidence-building, goal-setting, workplace readiness). It treats people's potential as an asset to be developed, not just a problem to be solved.",
+      "This is a broader, foundational programme underpinning several others - it's about equipping people with the durable resources needed for growth: financial literacy, vocational skills, access to credit or start-up capital, and personal development training (confidence-building, goal-setting, workplace readiness). It treats people's potential as an asset to be developed, not just a problem to be solved.",
     context_note:
       'Programme photos (financial literacy workshops, vocational training sessions, mentorship pairings) are currently being sourced from the field.',
     sdgs: [8, 9, 17],
@@ -149,7 +149,7 @@ const programmes: Program[] = [
     title: 'People Living with Disabilities (PLWD)',
     slug: 'plwd',
     summary:
-      "CIF is developing structured engagement with people living with disabilities within its host communities — moving from occasional charity toward sustained inclusion. This can involve accessibility advocacy, targeted skills training suited to different abilities, assistive resources, and awareness campaigns that challenge stigma and push for more inclusive community spaces.",
+      "CIF is developing structured engagement with people living with disabilities within its host communities - moving from occasional charity toward sustained inclusion. This can involve accessibility advocacy, targeted skills training suited to different abilities, assistive resources, and awareness campaigns that challenge stigma and push for more inclusive community spaces.",
     context_note: null,
     sdgs: [10],
     icon: '♿',
@@ -163,7 +163,7 @@ const programmes: Program[] = [
     title: 'Campaign Against Drug Abuse',
     slug: 'campaign-against-drug-abuse',
     summary:
-      "CIF is actively participating in an advocacy and public-awareness programme aimed at communities — especially youth — vulnerable to substance abuse. It typically combines school and community sensitization talks, media campaigns, and partnerships with health or law-enforcement bodies to warn against the dangers of drug misuse and encourage rehabilitation pathways for those already affected.",
+      "CIF is actively participating in an advocacy and public-awareness programme aimed at communities - especially youth - vulnerable to substance abuse. It typically combines school and community sensitization talks, media campaigns, and partnerships with health or law-enforcement bodies to warn against the dangers of drug misuse and encourage rehabilitation pathways for those already affected.",
     context_note: null,
     sdgs: [3, 16],
     icon: '🚫',
@@ -177,9 +177,9 @@ const programmes: Program[] = [
     title: 'Information Technology (IT)',
     slug: 'information-technology',
     summary:
-      "CIF runs digital literacy enrolment for students at both secondary and tertiary levels, teaching foundational IT skills — computer literacy, basic software use, and in some cases coding or digital tools relevant to today's job market. This equips young people to compete in an increasingly digital economy and reduces the digital divide between under-resourced schools and better-funded ones.",
+      "CIF runs digital literacy enrolment for students at both secondary and tertiary levels, teaching foundational IT skills - computer literacy, basic software use, and in some cases coding or digital tools relevant to today's job market. This equips young people to compete in an increasingly digital economy and reduces the digital divide between under-resourced schools and better-funded ones.",
     context_note:
-      "The NGO Ignition Boot Camp photos show CIF's participation in an external digital-tools/NGO-management training — relevant to IT and digital capacity building, and cross-referenced with Leadership Development.",
+      "The NGO Ignition Boot Camp photos show CIF's participation in an external digital-tools/NGO-management training - relevant to IT and digital capacity building, and cross-referenced with Leadership Development.",
     sdgs: [4, 9],
     icon: '💻',
     images: [
@@ -197,7 +197,7 @@ const programmes: Program[] = [
     title: 'Leadership Development',
     slug: 'leadership-development',
     summary:
-      "CIF engages in training its leadership to have firsthand leadership skills as the world evolves, to shape their future. CIF leadership attends both local and international conferences, seminars, and workshops as at when due. This programme is about cultivating the next generation of ethical, capable leaders — through mentorship, workshops on governance and integrity, public-speaking and decision-making training, and exposure to real community-leadership opportunities. It's a deliberate investment in the character and competence of future community and institutional leaders.",
+      "CIF engages in training its leadership to have firsthand leadership skills as the world evolves, to shape their future. CIF leadership attends both local and international conferences, seminars, and workshops as at when due. This programme is about cultivating the next generation of ethical, capable leaders - through mentorship, workshops on governance and integrity, public-speaking and decision-making training, and exposure to real community-leadership opportunities. It's a deliberate investment in the character and competence of future community and institutional leaders.",
     context_note:
       "CIF leadership's attendance at the NGO Ignition Boot Camp (Abuja Network of New NGOs) is shared context between this programme and the IT programme.",
     sdgs: [4, 16],
@@ -206,7 +206,7 @@ const programmes: Program[] = [
       { file: 'leadership-03-facilitator-speaking.jpeg', use: 'feature', description: 'Close-up of facilitator mid-presentation, attendees seated with materials' },
       { file: 'leadership-01-training-session-seated.jpeg', use: 'gallery', description: 'CIF leadership seated at a training workshop, facilitator addressing the room' },
       { file: 'leadership-02-training-session-wide.jpeg', use: 'gallery', description: 'Wide shot of the same workshop, facilitator in bright yellow attire presenting' },
-      { file: 'it-07-ngo-bootcamp-group-large.jpeg', use: 'gallery', description: 'NGO Ignition Boot Camp — CIF leadership at external digital-tools training (Abuja)' },
+      { file: 'it-07-ngo-bootcamp-group-large.jpeg', use: 'gallery', description: 'NGO Ignition Boot Camp - CIF leadership at external digital-tools training (Abuja)' },
     ],
   },
   {
@@ -214,37 +214,37 @@ const programmes: Program[] = [
     title: 'Security',
     slug: 'security',
     summary:
-      "CIF's security-focused programme aims to enhance the safety and general well-being of communities — this can take the form of community safety awareness campaigns, collaboration with local security structures, and initiatives that address root causes of insecurity such as youth unemployment and social exclusion (tying back into the Job Creation and Empowerment programmes).",
+      "CIF's security-focused programme aims to enhance the safety and general well-being of communities - this can take the form of community safety awareness campaigns, collaboration with local security structures, and initiatives that address root causes of insecurity such as youth unemployment and social exclusion (tying back into the Job Creation and Empowerment programmes).",
     context_note:
-      "Programme photos from CIF's own security-related activities are being sourced — the current visual is an illustrative graphic.",
+      "Programme photos from CIF's own security-related activities are being sourced - the current visual is an illustrative graphic.",
     sdgs: [16],
     icon: '🔒',
     images: [
-      { file: 'security-01-community-safety-illustration.jpeg', use: 'hero', description: "Illustrated 'Community Development and Public Safety Initiatives' graphic — construction worker, community member, and police officer" },
+      { file: 'security-01-community-safety-illustration.jpeg', use: 'hero', description: "Illustrated 'Community Development and Public Safety Initiatives' graphic - construction worker, community member, and police officer" },
     ],
   },
   {
     id: 'ramadan-fidya',
-    title: 'Ramadan Fidya — Feeding the Poor',
+    title: 'Ramadan Fidya - Feeding the Poor',
     slug: 'ramadan-fidya',
     summary:
-      "Fidya is compensation paid by a Muslim unable to fast during Ramadan due to a valid excuse (chronic illness, old age, pregnancy, breastfeeding, etc.) — traditionally fulfilled by feeding a poor person for each missed fasting day. CIF's Fidya initiative bridges two needs at once: helping community members fulfil this religious obligation, and getting nutritious food to vulnerable households during Ramadan. Distribution is documented so donors can see their obligation was fulfilled and food reached genuine beneficiaries.",
+      "Fidya is compensation paid by a Muslim unable to fast during Ramadan due to a valid excuse (chronic illness, old age, pregnancy, breastfeeding, etc.) - traditionally fulfilled by feeding a poor person for each missed fasting day. CIF's Fidya initiative bridges two needs at once: helping community members fulfil this religious obligation, and getting nutritious food to vulnerable households during Ramadan. Distribution is documented so donors can see their obligation was fulfilled and food reached genuine beneficiaries.",
     context_note:
       "Ramadan is typically when food insecurity is felt most acutely by low-income households. A structured Fidya programme meets this seasonal vulnerability with a coordinated, dignified response rather than ad hoc giving.",
     sdgs: [1, 2],
     icon: '🌙',
     images: [
-      { file: 'fidya-03-mass-food-distribution-mats.jpeg', use: 'hero', description: "Large-scale Ramadan food distribution — rows of packaged meals laid out on mats, 'Ramazan Programı' event banner in background" },
+      { file: 'fidya-03-mass-food-distribution-mats.jpeg', use: 'hero', description: "Large-scale Ramadan food distribution - rows of packaged meals laid out on mats, 'Ramazan Programı' event banner in background" },
       { file: 'fidya-01-communal-iftar-meal.jpeg', use: 'gallery', description: 'Large group sharing a communal Iftar meal on the ground' },
       { file: 'fidya-02-group-breaking-fast.jpeg', use: 'gallery', description: 'Men and boys eating together at Iftar (breaking of the fast)' },
     ],
   },
   {
     id: 'qurbani',
-    title: 'Qurbani — Eid al-Adha Distribution',
+    title: 'Qurbani - Eid al-Adha Distribution',
     slug: 'qurbani',
     summary:
-      "Qurbani (Udhiyah) is the ritual sacrifice of a livestock animal — commonly a ram, goat, or cow — performed by Muslims who can afford it around Eid al-Adha, commemorating Prophet Ibrahim's willingness to sacrifice his son Ismail in obedience to God. The meat is traditionally divided into three parts: one-third for the household, one-third for relatives and friends, and one-third for the poor and needy. CIF coordinates Qurbani on behalf of donors and distributes the bulk of the meat to widows, orphans, elderly residents, displaced persons, and low-income families — functioning as a direct, seasonal food-security intervention that also strengthens communal bonds.",
+      "Qurbani (Udhiyah) is the ritual sacrifice of a livestock animal - commonly a ram, goat, or cow - performed by Muslims who can afford it around Eid al-Adha, commemorating Prophet Ibrahim's willingness to sacrifice his son Ismail in obedience to God. The meat is traditionally divided into three parts: one-third for the household, one-third for relatives and friends, and one-third for the poor and needy. CIF coordinates Qurbani on behalf of donors and distributes the bulk of the meat to widows, orphans, elderly residents, displaced persons, and low-income families - functioning as a direct, seasonal food-security intervention that also strengthens communal bonds.",
     context_note:
       "Programme photos (livestock sourcing, slaughter/processing, meat distribution to beneficiary households) are currently being sourced from the field.",
     sdgs: [1, 2],
@@ -275,7 +275,7 @@ const sdgsList = [
 ];
 
 /* ─── Lightbox ───────────────────────────────────────────────────────────── */
-/* Uses global CSS classes from globals.css — styled-jsx doesn't reach child  */
+/* Uses global CSS classes from globals.css - styled-jsx doesn't reach child  */
 /* component boundaries, so lightbox CSS must live in the global stylesheet.  */
 interface LightboxProps {
   images: ProgramImage[];
@@ -466,7 +466,7 @@ function GalleryStrip({ images, onOpen }: { images: ProgramImage[]; onOpen: (i: 
 
   return (
     <div className="gallery-strip">
-      <h4 className="gallery-strip-label">All Photos — click to enlarge</h4>
+      <h4 className="gallery-strip-label">All Photos - click to enlarge</h4>
       <div className="gallery-strip-grid">
         {images.map((img, i) => (
           <button
