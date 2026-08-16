@@ -9,7 +9,7 @@ export default function Hero() {
       
       <div className="container hero-container">
         <div className="hero-content animate-fade-in">
-          <span className="hero-tagline">Empowering Communities in Nigeria</span>
+          <span className="hero-tagline">Serving Communities in Nigeria</span>
           <h1 className="hero-title">
             Empowering <span className="accent-text">Community</span> in Nigeria <br />
             and <span className="accent-text">Global Space</span>
