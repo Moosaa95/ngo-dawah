@@ -58,6 +58,26 @@ nav.navbar.scrolled .cif-abbr {
 nav.navbar.scrolled .bar {
   background-color: #0F1E36 !important;
 }
+nav.navbar:not(.scrolled) .nav-link {
+  color: #FFFFFF !important;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4) !important;
+}
+nav.navbar:not(.scrolled) .nav-link.active-route {
+  color: #FFFFFF !important;
+}
+nav.navbar .btn-primary-sm {
+  background-color: #3FB53F !important;
+  color: #FFFFFF !important;
+  padding: 10px 22px !important;
+  border-radius: 50px !important;
+  font-weight: 700 !important;
+  font-size: 14px !important;
+  box-shadow: 0 4px 10px rgba(63, 181, 63, 0.3) !important;
+}
+nav.navbar .btn-primary-sm:hover {
+  background-color: #35A335 !important;
+  box-shadow: 0 6px 16px rgba(63, 181, 63, 0.5) !important;
+}
 
 /* ── Global Lightbox ────────────────────────────────────────────────────── */
 /* Must be global - lightbox renders as a child component outside parent's   */
