@@ -120,7 +120,7 @@ export default function HomeClient() {
               <h2>Our Leadership & Team</h2>
               <p>
                 CIF is steered by a dedicated Board of Trustees, an experienced Management Team, 
-                and a highly skilled Health Technical unit coordinating over 50 active volunteers.
+                and a highly skilled Health Technical unit coordinating over 100 active volunteers.
               </p>
               <Link href="/team" className="btn-secondary">
                 Meet the Team &rarr;

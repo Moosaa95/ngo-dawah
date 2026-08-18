@@ -44,7 +44,7 @@ export default function Hero() {
             <div className="stat-label">Geopolitical Zones</div>
           </div>
           <div className="stat-card glass-card-dark">
-            <div className="stat-num">50+</div>
+            <div className="stat-num">100+</div>
             <div className="stat-label">Active Volunteers</div>
           </div>
           <div className="stat-card glass-card-dark">

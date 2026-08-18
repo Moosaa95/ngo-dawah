@@ -67,10 +67,6 @@ export default function Footer() {
           <p>
             &copy; {currentYear} Crescent Impact Foundation (CIF). All Rights Reserved. CAC Reg: 7437137
           </p>
-          <div className="attribution">
-            <span>Production of <strong>Shexim Prints</strong></span>
-            <a href="mailto:sheximprints@gmail.com" className="attr-link">sheximprints@gmail.com</a>
-          </div>
         </div>
       </div>
 

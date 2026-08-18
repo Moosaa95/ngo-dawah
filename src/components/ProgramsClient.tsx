@@ -246,10 +246,13 @@ const programmes: Program[] = [
     summary:
       "Qurbani (Udhiyah) is the ritual sacrifice of a livestock animal - commonly a ram, goat, or cow - performed by Muslims who can afford it around Eid al-Adha, commemorating Prophet Ibrahim's willingness to sacrifice his son Ismail in obedience to God. The meat is traditionally divided into three parts: one-third for the household, one-third for relatives and friends, and one-third for the poor and needy. CIF coordinates Qurbani on behalf of donors and distributes the bulk of the meat to widows, orphans, elderly residents, displaced persons, and low-income families - functioning as a direct, seasonal food-security intervention that also strengthens communal bonds.",
     context_note:
-      "Programme photos (livestock sourcing, slaughter/processing, meat distribution to beneficiary households) are currently being sourced from the field.",
+      "Field documentation capturing live Qurbani ritual sacrifice, livestock processing, and portioning fresh meat for community distribution.",
     sdgs: [1, 2],
     icon: '🐑',
-    images: [],
+    images: [
+      { file: 'qurbani-01-sacrifice-processing.jpeg', use: 'hero', description: 'Qurbani livestock ritual processing and community coordination during Eid al-Adha' },
+      { file: 'qurbani-02-fresh-meat-portioning.jpeg', use: 'gallery', description: 'Fresh Qurbani meat portioning for distribution to vulnerable families and widows' },
+    ],
   },
 ];
 

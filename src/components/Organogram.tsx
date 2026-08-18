@@ -10,16 +10,21 @@ interface NodeDetail {
 
 export default function Organogram() {
   const [selectedNode, setSelectedNode] = useState<NodeDetail | null>({
-    title: 'Board of Trustees (BOT)',
-    role: 'Governing Body',
-    desc: 'Led by BOT Chairman Imam Shakirullah Badewa and BOT Secretary Saliman Suleiman. Responsible for the global strategy, registration compliance, and ethical stewardship of the foundation.',
+    title: 'Board of Trustees Chairman',
+    role: 'Imam Shakirullah Badewa',
+    desc: 'Leads the Board of Trustees, guiding the global strategy, registration compliance, Islamic governance, and ethical stewardship of Crescent Impact Foundation.',
   });
 
   const nodeDetails: Record<string, NodeDetail> = {
-    bot: {
-      title: 'Board of Trustees (BOT)',
-      role: 'Governing Body',
-      desc: 'Led by BOT Chairman Imam Shakirullah Badewa and BOT Secretary Saliman Suleiman. Responsible for the global strategy, CAC compliance, and ethical stewardship of the foundation.',
+    botChairman: {
+      title: 'Board of Trustees Chairman',
+      role: 'Imam Shakirullah Badewa',
+      desc: 'Leads the Board of Trustees, guiding the global strategy, registration compliance, Islamic governance, and ethical stewardship of Crescent Impact Foundation.',
+    },
+    botSecretary: {
+      title: 'Board of Trustees Secretary',
+      role: 'Saliman Suleiman',
+      desc: 'Manages board administrative workflows, legal and CAC compliance, official documentation, statutory compliance, and governance record-keeping for the Board of Trustees.',
     },
     ed: {
       title: 'Executive Director',
@@ -53,7 +58,7 @@ export default function Organogram() {
     },
     volunteers: {
       title: 'Volunteer Network',
-      role: '50+ Nationwide Volunteers',
+      role: '100+ Nationwide Volunteers',
       desc: 'Executes ground operations, Zonal office help, distribution logistics, and community coordination.',
     },
   };
@@ -74,15 +79,29 @@ export default function Organogram() {
           {/* Visual Interactive Tree */}
           <div className="tree-container">
             <div className="tree">
-              {/* Root Level: BOT */}
+              {/* Root Level: BOT Chairman */}
               <div className="tree-level level-1">
                 <button
-                  onClick={() => setSelectedNode(nodeDetails.bot)}
-                  className={`tree-node node-bot ${selectedNode?.title === nodeDetails.bot.title ? 'active' : ''}`}
+                  onClick={() => setSelectedNode(nodeDetails.botChairman)}
+                  className={`tree-node node-bot ${selectedNode?.title === nodeDetails.botChairman.title ? 'active' : ''}`}
                 >
                   <div className="node-badge">Governance</div>
-                  <h3>Board of Trustees</h3>
-                  <span>Imam Shakirullah Badewa (Chair)</span>
+                  <h3>BOT Chairman</h3>
+                  <span>Imam Shakirullah Badewa</span>
+                </button>
+              </div>
+
+              <div className="tree-connector-vertical"></div>
+
+              {/* BOT Secretary Level */}
+              <div className="tree-level level-1-sec">
+                <button
+                  onClick={() => setSelectedNode(nodeDetails.botSecretary)}
+                  className={`tree-node node-bot ${selectedNode?.title === nodeDetails.botSecretary.title ? 'active' : ''}`}
+                >
+                  <div className="node-badge">Governance</div>
+                  <h3>BOT Secretary</h3>
+                  <span>Saliman Suleiman</span>
                 </button>
               </div>
 
@@ -170,7 +189,7 @@ export default function Organogram() {
                     className={`tree-node node-sub ${selectedNode?.title === nodeDetails.volunteers.title ? 'active' : ''}`}
                   >
                     <h3>Volunteer Network</h3>
-                    <span>50+ Members Nationwide</span>
+                    <span>100+ Members Nationwide</span>
                   </button>
                 </div>
               </div>
