@@ -120,10 +120,12 @@ const programmes: Program[] = [
     summary:
       "This is a broader, foundational programme underpinning several others - it's about equipping people with the durable resources needed for growth: financial literacy, vocational skills, access to credit or start-up capital, and personal development training (confidence-building, goal-setting, workplace readiness). It treats people's potential as an asset to be developed, not just a problem to be solved.",
     context_note:
-      'Programme photos (financial literacy workshops, vocational training sessions, mentorship pairings) are currently being sourced from the field.',
+      "Field documentation showing community care, basic relief, and human capital development outreach.",
     sdgs: [8, 9, 17],
     icon: '📈',
-    images: [],
+    images: [
+      { file: 'capital-01-human-development-community.jpeg', use: 'hero', description: 'Community support and human capital development outreach for vulnerable children and families' },
+    ],
   },
   {
     id: 'ecosystem-agriculture',
