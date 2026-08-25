@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { openDonateModal } from '@/components/DonateModal';
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -96,6 +97,19 @@ export default function ContactForm() {
                 <span>208, Queen Aminat Street, 2/2 Kubwa, Abuja, Nigeria.</span>
               </div>
             </div>
+          </div>
+
+          {/* Donation Bank Card */}
+          <div className="contact-bank-box" onClick={openDonateModal}>
+            <div className="cbb-header">
+              <span className="cbb-title">Bank Donation</span>
+              <span className="cbb-badge">Zenith Bank</span>
+            </div>
+            <div className="cbb-acc">1313 392 750</div>
+            <div className="cbb-name">Crescent Impact Foundation</div>
+            <button className="cbb-btn">
+              ❤️ Open Donation Portal
+            </button>
           </div>
         </div>
 
@@ -308,6 +322,73 @@ export default function ContactForm() {
           background: rgba(63, 181, 63, 0.12);
           color: #2F7C2F;
           border: 1px solid rgba(63, 181, 63, 0.2);
+        }
+
+        .contact-bank-box {
+          margin-top: 32px;
+          background: linear-gradient(135deg, #0F1E36 0%, #0A1424 100%);
+          border: 1px solid rgba(63, 181, 63, 0.3);
+          border-radius: 16px;
+          padding: 22px;
+          color: #FFFFFF;
+          cursor: pointer;
+          transition: var(--transition-fast);
+          box-shadow: var(--shadow-md);
+        }
+        .contact-bank-box:hover {
+          transform: translateY(-2px);
+          border-color: rgba(63, 181, 63, 0.6);
+          box-shadow: 0 10px 30px rgba(15, 30, 54, 0.2);
+        }
+        .cbb-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-bottom: 12px;
+        }
+        .cbb-title {
+          font-size: 13px;
+          font-weight: 700;
+          color: var(--accent-gold);
+          letter-spacing: 1px;
+          text-transform: uppercase;
+        }
+        .cbb-badge {
+          background: rgba(168, 0, 0, 0.9);
+          color: #FFFFFF;
+          font-size: 11px;
+          font-weight: 800;
+          padding: 3px 10px;
+          border-radius: 20px;
+        }
+        .cbb-acc {
+          font-family: 'Outfit', monospace;
+          font-size: 24px;
+          font-weight: 800;
+          letter-spacing: 2.5px;
+          color: #FFFFFF;
+          margin-bottom: 4px;
+        }
+        .cbb-name {
+          font-size: 12px;
+          color: rgba(255, 255, 255, 0.75);
+          text-transform: uppercase;
+          margin-bottom: 16px;
+        }
+        .cbb-btn {
+          width: 100%;
+          background: #3FB53F;
+          color: #FFFFFF;
+          border: none;
+          padding: 10px;
+          border-radius: 10px;
+          font-weight: 700;
+          font-size: 13.5px;
+          cursor: pointer;
+          transition: background 0.2s;
+        }
+        .cbb-btn:hover {
+          background: #35A335;
         }
 
         @media (max-width: 991px) {

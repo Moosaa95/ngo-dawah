@@ -3,6 +3,7 @@
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
 import Footer from '@/components/Footer';
+import DonateSection from '@/components/DonateSection';
 import Link from 'next/link';
 
 export default function HomeClient() {
@@ -111,6 +112,9 @@ export default function HomeClient() {
             </Link>
           </div>
         </section>
+
+        {/* Dedicated Zenith Bank Donation Showcase Section */}
+        <DonateSection />
 
         {/* Team Teaser */}
         <section className="home-section-card bg-white-card">

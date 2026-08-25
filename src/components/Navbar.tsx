@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import DonateModal, { openDonateModal } from '@/components/DonateModal';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -34,72 +35,80 @@ export default function Navbar() {
   const forceScrolled = !isHome || isScrolled;
 
   return (
-    <nav className={`navbar ${forceScrolled ? 'scrolled' : ''}`}>
-      {/* Scroll Progress Bar */}
-      <div className="scroll-progress"></div>
-      
-      <div className="nav-container">
-        <Link href="/" className="nav-logo">
-          {/* Recreating CIF Logo with Inline SVG */}
-          <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo-svg">
-            <circle cx="100" cy="100" r="80" fill="white" stroke="#3FB53F" strokeWidth="6" />
-            <path d="M100 135C125 135 145 115 145 90C145 65 125 45 100 45C75 45 55 65 55 90C55 115 75 135 100 135Z" fill="#FAFBFD" />
-            {/* Figures in logo */}
-            <circle cx="100" cy="80" r="12" fill="#0F1E36" />
-            <path d="M75 120C75 105 85 95 100 95C115 95 125 105 125 120" stroke="#0F1E36" strokeWidth="8" strokeLinecap="round" />
-            <circle cx="75" cy="98" r="10" fill="#3FB53F" />
-            <path d="M55 130C55 118 63 110 75 110" stroke="#3FB53F" strokeWidth="6" strokeLinecap="round" />
-            <circle cx="125" cy="98" r="10" fill="#3FB53F" />
-            <path d="M125 110C137 110 145 118 145 130" stroke="#3FB53F" strokeWidth="6" strokeLinecap="round" />
-            {/* Stars */}
-            <path d="M45 100L48 106L55 107L50 112L51 119L45 115L39 119L40 112L35 107L42 106Z" fill="#0F1E36" />
-            <path d="M155 100L158 106L165 107L160 112L161 119L155 115L149 119L150 112L145 107L152 106Z" fill="#3FB53F" />
-          </svg>
-          <div className="logo-text">
-            <span className="cif-abbr">C I F</span>
-            <span className="cif-full">CRESCENT IMPACT FOUNDATION</span>
-          </div>
-        </Link>
+    <>
+      <DonateModal />
+      <nav className={`navbar ${forceScrolled ? 'scrolled' : ''}`}>
+        {/* Scroll Progress Bar */}
+        <div className="scroll-progress"></div>
+        
+        <div className="nav-container">
+          <Link href="/" className="nav-logo">
+            {/* Recreating CIF Logo with Inline SVG */}
+            <svg width="40" height="40" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="logo-svg">
+              <circle cx="100" cy="100" r="80" fill="white" stroke="#3FB53F" strokeWidth="6" />
+              <path d="M100 135C125 135 145 115 145 90C145 65 125 45 100 45C75 45 55 65 55 90C55 115 75 135 100 135Z" fill="#FAFBFD" />
+              {/* Figures in logo */}
+              <circle cx="100" cy="80" r="12" fill="#0F1E36" />
+              <path d="M75 120C75 105 85 95 100 95C115 95 125 105 125 120" stroke="#0F1E36" strokeWidth="8" strokeLinecap="round" />
+              <circle cx="75" cy="98" r="10" fill="#3FB53F" />
+              <path d="M55 130C55 118 63 110 75 110" stroke="#3FB53F" strokeWidth="6" strokeLinecap="round" />
+              <circle cx="125" cy="98" r="10" fill="#3FB53F" />
+              <path d="M125 110C137 110 145 118 145 130" stroke="#3FB53F" strokeWidth="6" strokeLinecap="round" />
+              {/* Stars */}
+              <path d="M45 100L48 106L55 107L50 112L51 119L45 115L39 119L40 112L35 107L42 106Z" fill="#0F1E36" />
+              <path d="M155 100L158 106L165 107L160 112L161 119L155 115L149 119L150 112L145 107L152 106Z" fill="#3FB53F" />
+            </svg>
+            <div className="logo-text">
+              <span className="cif-abbr">C I F</span>
+              <span className="cif-full">CRESCENT IMPACT FOUNDATION</span>
+            </div>
+          </Link>
 
-        {/* Desktop Menu */}
-        <div className="nav-links">
-          <Link href="/" className={`nav-link ${pathname === '/' ? 'active-route' : ''}`}>Home</Link>
-          <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active-route' : ''}`}>About Us</Link>
-          <Link href="/focus" className={`nav-link ${pathname === '/focus' ? 'active-route' : ''}`}>Our Focus</Link>
-          <Link href="/programs" className={`nav-link ${pathname === '/programs' ? 'active-route' : ''}`}>Key Programs</Link>
-          <Link href="/team" className={`nav-link ${pathname === '/team' ? 'active-route' : ''}`}>Leadership</Link>
-          <Link href="/contact" className="btn-primary-sm">Get Involved</Link>
+          {/* Desktop Menu */}
+          <div className="nav-links">
+            <Link href="/" className={`nav-link ${pathname === '/' ? 'active-route' : ''}`}>Home</Link>
+            <Link href="/about" className={`nav-link ${pathname === '/about' ? 'active-route' : ''}`}>About Us</Link>
+            <Link href="/focus" className={`nav-link ${pathname === '/focus' ? 'active-route' : ''}`}>Our Focus</Link>
+            <Link href="/programs" className={`nav-link ${pathname === '/programs' ? 'active-route' : ''}`}>Key Programs</Link>
+            <Link href="/team" className={`nav-link ${pathname === '/team' ? 'active-route' : ''}`}>Leadership</Link>
+            <button onClick={openDonateModal} className="btn-donate-nav" aria-label="Donate to CIF">
+              <span className="btn-heart">❤️</span> Donate
+            </button>
+            <Link href="/contact" className="btn-primary-sm">Get Involved</Link>
+          </div>
+
+          {/* Mobile Hamburger Button */}
+          <button className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle Navigation">
+            <span className="bar"></span>
+            <span className="bar"></span>
+            <span className="bar"></span>
+          </button>
         </div>
 
-        {/* Mobile Hamburger Button */}
-        <button className={`hamburger ${isOpen ? 'active' : ''}`} onClick={toggleMenu} aria-label="Toggle Navigation">
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
-        </button>
-      </div>
+        {/* Mobile Drawer Dropdown */}
+        <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
+          <Link href="/" onClick={toggleMenu} className="mobile-link">Home</Link>
+          <Link href="/about" onClick={toggleMenu} className="mobile-link">About Us</Link>
+          <Link href="/focus" onClick={toggleMenu} className="mobile-link">Our Focus</Link>
+          <Link href="/programs" onClick={toggleMenu} className="mobile-link">Key Programs</Link>
+          <Link href="/team" onClick={toggleMenu} className="mobile-link">Leadership</Link>
+          <button onClick={() => { toggleMenu(); openDonateModal(); }} className="btn-donate-nav mobile-btn-donate">
+            <span className="btn-heart">❤️</span> Donate Now (Zenith Bank)
+          </button>
+          <Link href="/contact" onClick={toggleMenu} className="btn-primary mobile-btn">Get Involved</Link>
+        </div>
 
-      {/* Mobile Drawer Dropdown */}
-      <div className={`mobile-nav ${isOpen ? 'open' : ''}`}>
-        <Link href="/" onClick={toggleMenu} className="mobile-link">Home</Link>
-        <Link href="/about" onClick={toggleMenu} className="mobile-link">About Us</Link>
-        <Link href="/focus" onClick={toggleMenu} className="mobile-link">Our Focus</Link>
-        <Link href="/programs" onClick={toggleMenu} className="mobile-link">Key Programs</Link>
-        <Link href="/team" onClick={toggleMenu} className="mobile-link">Leadership</Link>
-        <Link href="/contact" onClick={toggleMenu} className="btn-primary mobile-btn">Get Involved</Link>
-      </div>
-
-      <style jsx>{`
-        .navbar {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          z-index: 1000;
-          padding: 24px 0;
-          transition: var(--transition-normal);
-          background: linear-gradient(180deg, rgba(15, 30, 54, 0.6) 0%, rgba(15, 30, 54, 0) 100%);
-        }
+        <style jsx>{`
+          .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 24px 0;
+            transition: var(--transition-normal);
+            background: linear-gradient(180deg, rgba(15, 30, 54, 0.6) 0%, rgba(15, 30, 54, 0) 100%);
+          }
         .scroll-progress {
           position: absolute;
           top: 0;
@@ -223,6 +232,33 @@ export default function Navbar() {
           transform: translateY(-2px);
           box-shadow: 0 6px 16px rgba(63, 181, 63, 0.5);
         }
+        .btn-donate-nav {
+          background: linear-gradient(135deg, #E2B13C 0%, #D49D24 100%);
+          color: #0F1E36;
+          border: none;
+          padding: 9px 20px;
+          border-radius: 50px;
+          font-weight: 800;
+          font-size: 14px;
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          cursor: pointer;
+          box-shadow: 0 4px 14px rgba(226, 177, 60, 0.35);
+          transition: var(--transition-fast);
+        }
+        .btn-donate-nav:hover {
+          background: linear-gradient(135deg, #F0C048 0%, #E2B13C 100%);
+          transform: translateY(-2px) scale(1.03);
+          box-shadow: 0 6px 20px rgba(226, 177, 60, 0.55);
+        }
+        .mobile-btn-donate {
+          width: 100%;
+          justify-content: center;
+          padding: 14px 20px;
+          font-size: 16px;
+          border-radius: 14px;
+        }
         .hamburger {
           display: none;
           flex-direction: column;
@@ -303,5 +339,6 @@ export default function Navbar() {
         }
       `}</style>
     </nav>
+    </>
   );
 }

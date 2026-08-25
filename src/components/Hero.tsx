@@ -1,5 +1,7 @@
 'use client';
 
+import { openDonateModal } from '@/components/DonateModal';
+
 export default function Hero() {
   return (
     <section className="hero-section islamic-pattern">
@@ -20,6 +22,9 @@ export default function Hero() {
             innovation, data-driven systems, and partnerships.
           </p>
           <div className="hero-actions">
+            <button onClick={openDonateModal} className="btn-hero-donate">
+              <span>❤️</span> Donate Now (Zenith Bank)
+            </button>
             <a href="#programs" className="btn-primary">
               Our Programs
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -169,7 +174,28 @@ export default function Hero() {
         }
         .hero-actions {
           display: flex;
-          gap: 20px;
+          gap: 16px;
+          flex-wrap: wrap;
+        }
+        .btn-hero-donate {
+          background: linear-gradient(135deg, #E2B13C 0%, #D49D24 100%);
+          color: #0F1E36;
+          border: none;
+          padding: 14px 28px;
+          border-radius: 50px;
+          font-weight: 800;
+          font-size: 15px;
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          cursor: pointer;
+          box-shadow: 0 8px 24px rgba(226, 177, 60, 0.4);
+          transition: var(--transition-normal);
+        }
+        .btn-hero-donate:hover {
+          background: linear-gradient(135deg, #F5C64D 0%, #E2B13C 100%);
+          transform: translateY(-2px) scale(1.02);
+          box-shadow: 0 12px 30px rgba(226, 177, 60, 0.6);
         }
         .btn-secondary-white {
           border: 2px solid rgba(255, 255, 255, 0.3);
